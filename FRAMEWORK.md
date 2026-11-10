@@ -46,6 +46,33 @@ All firm artifacts live inside the target project's `.firm/` directory:
 - `.firm/04-architecture.md` (**`dwight`**) — Directory tree, data schemas, typed API/module contracts, error handling boundaries, and ordered implementation milestones.
 - `.firm/05-build-log.md` (**`darryl`**) — Milestone-by-milestone build log, verification command outputs, and traceability check against blueprints `01`–`04`.
 
+---
+
+## 5. Token Governance & Model Routing Strategy
+
+To maintain maximum output quality while preventing rate lockouts and preserving high-reasoning quotas:
+
+### 1. Tiered Model Routing Matrix
+- **Tier 1 (High Reasoning)**: Restricted strictly to root orchestration, task planning, and error arbitration (**Michael** / **Toby**). Prohibited from writing implementation files directly.
+- **Tier 2 / 3 (Standard / Fast / Flash)**: Enforced for procedural code generation, CSS styling, tests, and file manipulation (**Jim**, **Andy**, **Dwight**, **Darryl**).
+- When calling `invoke_subagent`:
+  - `toby`: `Model: "inherit"` (or `"pro"` for complex specs)
+  - `jim`: `Model: "flash"`
+  - `andy`: `Model: "flash"`
+  - `dwight`: `Model: "inherit"` (or `"pro"` for core architecture)
+  - `darryl`: `Model: "flash"` (switches to `"inherit"` only when arbitrating complex multi-file test failures)
+
+### 2. Operational Guardrails
+- **Guardrail 1: Zero-Drafting for the Orchestrator**: Michael Scott NEVER outputs raw code blocks intended to be saved as project files. Michael outputs only atomic sub-tasks, desk assignments, and gate verification summaries.
+- **Guardrail 2: Single-File Scope per Task Execution**: Worker agents modify or generate exactly one target file per prompt cycle unless explicitly approved by the human supervisor.
+- **Guardrail 3: 2-Turn Anti-Loop Circuit Breaker**: Subagents are permitted a maximum of two (2) self-correction retry cycles upon encountering an error (such as a failed test or syntax error). If unresolved after 2 attempts, the agent must immediately stop, summarize the error and stack trace, and escalate to Michael or the Human Supervisor.
+- **Guardrail 4: Local File Referencing (No Memory Dumps)**: Never dump full file trees or multi-megabyte dependencies into prompt memory. Use exact local file referencing (e.g. `@src/models.ts` or line ranges).
+- **Guardrail 5: Dynamic Quota Fallback (Economy Mode)**: If high-reasoning weekly quotas drop below 30% or a 5-hour rate limit approaches, immediately switch active orchestration and worker models to fast reasoning (`flash`) to avoid session lockouts.
+
+---
+
+## 6. Visual Task Progress Board & Quality Check Format
+
 ### Visual Task Progress Board (`dundermifflin-board.html`)
 
 - Template path: `C:/Users/Lenovo/.gemini/config/plugins/dundermifflin/templates/dundermifflin-board.html`
