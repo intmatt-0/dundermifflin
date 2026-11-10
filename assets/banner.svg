@@ -1,0 +1,217 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 230" width="100%">
+  <style>
+    @keyframes bob { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-1px); } }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.35; } }
+    @keyframes march { 0% { stroke-dashoffset: 0; } 100% { stroke-dashoffset: -16; } }
+    .bob1 { animation: bob 1.5s steps(1, end) infinite; }
+    .bob2 { animation: bob 1.9s steps(1, end) infinite 0.3s; }
+    .bob3 { animation: bob 1.7s steps(1, end) infinite 0.6s; }
+    .led { animation: pulse 1.2s steps(2, end) infinite; }
+    .txt { font-family: 'Courier New', Consolas, monospace; font-weight: bold; }
+  </style>
+
+  <!-- Outer Retro Arcade Frame -->
+  <rect x="4" y="4" width="832" height="222" fill="#09090b" stroke="#27272a" stroke-width="4"/>
+  <rect x="10" y="10" width="820" height="210" fill="#0f172a" stroke="#1e293b" stroke-width="2"/>
+
+  <!-- Pixel Grid Background Pattern -->
+  <defs>
+    <pattern id="grid" width="16" height="16" patternUnits="userSpaceOnUse">
+      <path d="M 16 0 L 0 0 0 16" fill="none" stroke="#1e293b" stroke-width="0.6"/>
+    </pattern>
+  </defs>
+  <rect x="12" y="12" width="816" height="206" fill="url(#grid)" opacity="0.65"/>
+
+  <!-- Top Dunder Mifflin Sign Banner -->
+  <rect x="28" y="22" width="784" height="58" fill="#18181b" stroke="#3f3f46" stroke-width="2"/>
+  <rect x="32" y="26" width="8" height="8" fill="#10b981" class="led"/>
+  <text x="50" y="46" fill="#f8fafc" font-size="20" class="txt" letter-spacing="2">DUNDER MIFFLIN // SOFTWARE CONSTRUCTION FIRM</text>
+  <text x="50" y="66" fill="#94a3b8" font-size="11" class="txt" letter-spacing="1">SPEC-DRIVEN MULTI-AGENT SYSTEM FOR GOOGLE ANTIGRAVITY  |  BY @INTMATT-0</text>
+  <rect x="690" y="34" width="108" height="24" fill="#052e16" stroke="#10b981" stroke-width="1.5"/>
+  <text x="702" y="50" fill="#34d399" font-size="11" class="txt">● SDD v1.0</text>
+
+  <!-- 6 Crew Member Arcade Slots -->
+
+  <g transform="translate(28, 94)">
+    <rect x="3" y="3" width="124" height="110" fill="#020617"/>
+    <rect x="0" y="0" width="124" height="110" fill="#18181b" stroke="#ef4444" stroke-width="2"/>
+    <g transform="translate(8, 8) scale(3.1)" shape-rendering="crispEdges" class="bob1">
+      <rect x="0" y="0" width="16" height="16" fill="#1e293b"/>
+  <rect x="2" y="10" width="12" height="6" fill="#27272a"/><rect x="6" y="10" width="4" height="6" fill="#f8fafc"/>
+  <rect x="7" y="10" width="2" height="1" fill="#b91c1c"/><rect x="7" y="11" width="2" height="4" fill="#ef4444"/>
+  <g class="bob">
+    <rect x="4" y="2" width="8" height="2" fill="#18181b"/><rect x="3" y="3" width="2" height="3" fill="#18181b"/><rect x="11" y="3" width="2" height="2" fill="#18181b"/>
+    <rect x="4" y="4" width="8" height="6" fill="#f5c6a5"/><rect x="5" y="3" width="6" height="1" fill="#f5c6a5"/>
+    <rect x="5" y="5" width="2" height="1" fill="#27272a"/><rect x="9" y="5" width="2" height="1" fill="#27272a"/>
+    <g class="blink">
+      <rect x="5" y="6" width="1" height="1" fill="#09090b"/><rect x="10" y="6" width="1" height="1" fill="#09090b"/>
+    </g>
+    <rect x="6" y="8" width="4" height="1" fill="#ffffff"/><rect x="7" y="9" width="2" height="1" fill="#be123c"/>
+  </g>
+  <rect x="12" y="9" width="1" height="1" fill="#93c5fd" class="s1"/>
+  <rect x="13" y="8" width="1" height="1" fill="#e2e8f0" class="s2"/>
+  <g class="mug">
+    <rect x="11" y="11" width="3" height="3" fill="#f8fafc"/><rect x="14" y="12" width="1" height="1" fill="#cbd5e1"/><rect x="12" y="12" width="1" height="1" fill="#2563eb"/>
+  </g>
+    </g>
+    <rect x="8" y="8" width="49.6" height="49.6" fill="none" stroke="#3f3f46" stroke-width="1.5"/>
+    <text x="64" y="24" fill="#f8fafc" font-size="11" class="txt">MICHAEL</text>
+    <text x="64" y="40" fill="#94a3b8" font-size="9" class="txt">FOREMAN</text>
+    <rect x="64" y="46" width="52" height="14" fill="#09090b" stroke="#27272a" stroke-width="1"/>
+    <text x="68" y="56" fill="#38bdf8" font-size="8" class="txt">/dunderm</text>
+    <rect x="8" y="68" width="108" height="18" fill="#09090b" stroke="#27272a" stroke-width="1"/>
+    <text x="14" y="80" fill="#e2e8f0" font-size="9" class="txt">/dundermifflin</text>
+    <rect x="8" y="92" width="108" height="8" fill="#09090b" stroke="#27272a" stroke-width="1"/>
+    <rect x="9" y="93" width="106" height="6" fill="#10b981"/>
+  </g>
+
+  <g transform="translate(160, 94)">
+    <rect x="3" y="3" width="124" height="110" fill="#020617"/>
+    <rect x="0" y="0" width="124" height="110" fill="#18181b" stroke="#a89070" stroke-width="2"/>
+    <g transform="translate(8, 8) scale(3.1)" shape-rendering="crispEdges" class="bob2">
+      <rect x="0" y="0" width="16" height="16" fill="#292524"/>
+  <rect x="2" y="10" width="12" height="6" fill="#a89070"/><rect x="6" y="10" width="4" height="6" fill="#fef3c7"/>
+  <rect x="7" y="10" width="2" height="5" fill="#78350f"/>
+  <g class="bob">
+    <rect x="4" y="2" width="8" height="1" fill="#b48a5a"/><rect x="3" y="3" width="2" height="3" fill="#b48a5a"/><rect x="11" y="3" width="2" height="3" fill="#b48a5a"/>
+    <rect x="5" y="3" width="6" height="1" fill="#f3c6a5"/><rect x="4" y="4" width="8" height="6" fill="#f3c6a5"/>
+    <rect x="5" y="5" width="2" height="1" fill="#9a7248"/><rect x="9" y="5" width="2" height="1" fill="#9a7248"/>
+    <g class="blink">
+      <rect x="5" y="6" width="1" height="1" fill="#292524"/><rect x="10" y="6" width="1" height="1" fill="#292524"/>
+    </g>
+    <rect x="6" y="8" width="4" height="1" fill="#a16247"/>
+    <rect x="12" y="4" width="1" height="2" fill="#38bdf8" class="sigh"/>
+  </g>
+    </g>
+    <rect x="8" y="8" width="49.6" height="49.6" fill="none" stroke="#3f3f46" stroke-width="1.5"/>
+    <text x="64" y="24" fill="#f8fafc" font-size="11" class="txt">TOBY</text>
+    <text x="64" y="40" fill="#94a3b8" font-size="9" class="txt">SPEC PLAN</text>
+    <rect x="64" y="46" width="52" height="14" fill="#09090b" stroke="#27272a" stroke-width="1"/>
+    <text x="68" y="56" fill="#38bdf8" font-size="8" class="txt">/toby</text>
+    <rect x="8" y="68" width="108" height="18" fill="#09090b" stroke="#27272a" stroke-width="1"/>
+    <text x="14" y="80" fill="#e2e8f0" font-size="9" class="txt">/toby</text>
+    <rect x="8" y="92" width="108" height="8" fill="#09090b" stroke="#27272a" stroke-width="1"/>
+    <rect x="9" y="93" width="106" height="6" fill="#10b981"/>
+  </g>
+
+  <g transform="translate(292, 94)">
+    <rect x="3" y="3" width="124" height="110" fill="#020617"/>
+    <rect x="0" y="0" width="124" height="110" fill="#18181b" stroke="#3b82f6" stroke-width="2"/>
+    <g transform="translate(8, 8) scale(3.1)" shape-rendering="crispEdges" class="bob3">
+      <rect x="0" y="0" width="16" height="16" fill="#172554"/>
+  <rect x="2" y="10" width="12" height="6" fill="#f8fafc"/><rect x="2" y="11" width="2" height="5" fill="#e2e8f0"/><rect x="12" y="11" width="2" height="5" fill="#e2e8f0"/>
+  <rect x="7" y="10" width="2" height="5" fill="#1e3a8a"/><rect x="7" y="11" width="2" height="1" fill="#3b82f6"/>
+  <g class="bob">
+    <rect x="4" y="2" width="8" height="2" fill="#4a3222"/><rect x="3" y="3" width="10" height="2" fill="#4a3222"/>
+    <rect x="3" y="5" width="1" height="2" fill="#4a3222"/><rect x="6" y="4" width="3" height="1" fill="#3b2619"/><rect x="12" y="5" width="1" height="2" fill="#4a3222"/>
+    <rect x="4" y="4" width="2" height="1" fill="#f5c6a5"/><rect x="9" y="4" width="3" height="1" fill="#f5c6a5"/><rect x="4" y="5" width="8" height="5" fill="#f5c6a5"/>
+    <g class="brows">
+      <rect x="5" y="5" width="2" height="1" fill="#3b2619"/><rect x="9" y="5" width="2" height="1" fill="#3b2619"/>
+    </g>
+    <g class="blink">
+      <rect x="5" y="6" width="1" height="1" fill="#18181b"/><rect x="10" y="6" width="1" height="1" fill="#18181b"/>
+    </g>
+    <rect x="6" y="8" width="3" height="1" fill="#9a5b42"/>
+    <rect x="9" y="7" width="1" height="1" fill="#9a5b42" class="brows"/>
+  </g>
+    </g>
+    <rect x="8" y="8" width="49.6" height="49.6" fill="none" stroke="#3f3f46" stroke-width="1.5"/>
+    <text x="64" y="24" fill="#f8fafc" font-size="11" class="txt">JIM</text>
+    <text x="64" y="40" fill="#94a3b8" font-size="9" class="txt">UX DESIGN</text>
+    <rect x="64" y="46" width="52" height="14" fill="#09090b" stroke="#27272a" stroke-width="1"/>
+    <text x="68" y="56" fill="#38bdf8" font-size="8" class="txt">/jim</text>
+    <rect x="8" y="68" width="108" height="18" fill="#09090b" stroke="#27272a" stroke-width="1"/>
+    <text x="14" y="80" fill="#e2e8f0" font-size="9" class="txt">/jim</text>
+    <rect x="8" y="92" width="108" height="8" fill="#09090b" stroke="#27272a" stroke-width="1"/>
+    <rect x="9" y="93" width="106" height="6" fill="#10b981"/>
+  </g>
+
+  <g transform="translate(424, 94)">
+    <rect x="3" y="3" width="124" height="110" fill="#020617"/>
+    <rect x="0" y="0" width="124" height="110" fill="#18181b" stroke="#dc2626" stroke-width="2"/>
+    <g transform="translate(8, 8) scale(3.1)" shape-rendering="crispEdges" class="bob1">
+      <rect x="0" y="0" width="16" height="16" fill="#450a0a"/>
+  <rect x="2" y="10" width="12" height="6" fill="#bae6fd"/><rect x="4" y="10" width="8" height="6" fill="#dc2626"/><rect x="6" y="10" width="4" height="2" fill="#bae6fd"/>
+  <rect x="6" y="10" width="4" height="1" fill="#eab308"/><rect x="7" y="11" width="2" height="4" fill="#1e3a8a"/>
+  <rect x="13" y="3" width="1" height="2" fill="#fde047" class="note"/>
+  <rect x="14" y="2" width="1" height="1" fill="#fde047" class="note"/>
+  <g class="bob">
+    <rect x="4" y="2" width="8" height="2" fill="#5c3a21"/><rect x="3" y="3" width="2" height="3" fill="#5c3a21"/><rect x="11" y="3" width="2" height="2" fill="#5c3a21"/>
+    <rect x="4" y="4" width="8" height="6" fill="#f5c6a5"/>
+    <g class="blink">
+      <rect x="5" y="6" width="1" height="1" fill="#18181b"/><rect x="10" y="6" width="1" height="1" fill="#18181b"/>
+    </g>
+    <rect x="6" y="8" width="4" height="1" fill="#ffffff"/><rect x="6" y="9" width="4" height="1" fill="#b91c1c"/>
+  </g>
+    </g>
+    <rect x="8" y="8" width="49.6" height="49.6" fill="none" stroke="#3f3f46" stroke-width="1.5"/>
+    <text x="64" y="24" fill="#f8fafc" font-size="11" class="txt">ANDY</text>
+    <text x="64" y="40" fill="#94a3b8" font-size="9" class="txt">UI DESIGN</text>
+    <rect x="64" y="46" width="52" height="14" fill="#09090b" stroke="#27272a" stroke-width="1"/>
+    <text x="68" y="56" fill="#38bdf8" font-size="8" class="txt">/andy</text>
+    <rect x="8" y="68" width="108" height="18" fill="#09090b" stroke="#27272a" stroke-width="1"/>
+    <text x="14" y="80" fill="#e2e8f0" font-size="9" class="txt">/andy</text>
+    <rect x="8" y="92" width="108" height="8" fill="#09090b" stroke="#27272a" stroke-width="1"/>
+    <rect x="9" y="93" width="106" height="6" fill="#10b981"/>
+  </g>
+
+  <g transform="translate(556, 94)">
+    <rect x="3" y="3" width="124" height="110" fill="#020617"/>
+    <rect x="0" y="0" width="124" height="110" fill="#18181b" stroke="#eab308" stroke-width="2"/>
+    <g transform="translate(8, 8) scale(3.1)" shape-rendering="crispEdges" class="bob2">
+      <rect x="0" y="0" width="16" height="16" fill="#422006"/>
+  <rect x="2" y="10" width="12" height="6" fill="#eab308"/>
+  <rect x="7" y="10" width="2" height="5" fill="#451a03"/><rect x="7" y="11" width="2" height="1" fill="#78350f"/>
+  <g class="bob">
+    <rect x="3" y="2" width="4" height="2" fill="#3b2619"/><rect x="9" y="2" width="4" height="2" fill="#3b2619"/>
+    <rect x="3" y="4" width="1" height="3" fill="#3b2619"/><rect x="12" y="4" width="1" height="3" fill="#3b2619"/>
+    <rect x="7" y="2" width="2" height="2" fill="#f5c6a5"/><rect x="4" y="4" width="8" height="6" fill="#f5c6a5"/>
+    <rect x="4" y="5" width="3" height="2" fill="#d97706"/><rect x="9" y="5" width="3" height="2" fill="#d97706"/><rect x="7" y="5" width="2" height="1" fill="#d97706"/>
+    <g class="blink">
+      <rect x="5" y="6" width="1" height="1" fill="#18181b"/><rect x="10" y="6" width="1" height="1" fill="#18181b"/>
+    </g>
+    <g class="glint">
+      <rect x="4" y="5" width="1" height="1" fill="#fef08a"/><rect x="9" y="5" width="1" height="1" fill="#fef08a"/>
+    </g>
+    <rect x="6" y="8" width="4" height="1" fill="#7c2d12"/>
+  </g>
+    </g>
+    <rect x="8" y="8" width="49.6" height="49.6" fill="none" stroke="#3f3f46" stroke-width="1.5"/>
+    <text x="64" y="24" fill="#f8fafc" font-size="11" class="txt">DWIGHT</text>
+    <text x="64" y="40" fill="#94a3b8" font-size="9" class="txt">ARCHITECT</text>
+    <rect x="64" y="46" width="52" height="14" fill="#09090b" stroke="#27272a" stroke-width="1"/>
+    <text x="68" y="56" fill="#38bdf8" font-size="8" class="txt">/dwight</text>
+    <rect x="8" y="68" width="108" height="18" fill="#09090b" stroke="#27272a" stroke-width="1"/>
+    <text x="14" y="80" fill="#e2e8f0" font-size="9" class="txt">/dwight</text>
+    <rect x="8" y="92" width="108" height="8" fill="#09090b" stroke="#27272a" stroke-width="1"/>
+    <rect x="9" y="93" width="106" height="6" fill="#10b981"/>
+  </g>
+
+  <g transform="translate(688, 94)">
+    <rect x="3" y="3" width="124" height="110" fill="#020617"/>
+    <rect x="0" y="0" width="124" height="110" fill="#18181b" stroke="#2563eb" stroke-width="2"/>
+    <g transform="translate(8, 8) scale(3.1)" shape-rendering="crispEdges" class="bob3">
+      <rect x="0" y="0" width="16" height="16" fill="#1e3a8a"/>
+  <rect x="2" y="10" width="12" height="6" fill="#2563eb"/><rect x="5" y="10" width="6" height="1" fill="#1e3a8a"/>
+  <rect x="9" y="12" width="3" height="1" fill="#f8fafc"/>
+  <rect x="11" y="12" width="1" height="1" fill="#38bdf8" class="badge"/>
+  <g class="bob">
+    <rect x="4" y="2" width="8" height="2" fill="#09090b"/><rect x="3" y="3" width="2" height="3" fill="#09090b"/><rect x="11" y="3" width="2" height="3" fill="#09090b"/>
+    <rect x="4" y="4" width="8" height="6" fill="#8d5524"/>
+    <g class="blink">
+      <rect x="5" y="6" width="1" height="1" fill="#09090b"/><rect x="10" y="6" width="1" height="1" fill="#09090b"/>
+    </g>
+    <rect x="6" y="8" width="4" height="2" fill="#09090b"/><rect x="7" y="8" width="2" height="1" fill="#f8fafc"/>
+  </g>
+    </g>
+    <rect x="8" y="8" width="49.6" height="49.6" fill="none" stroke="#3f3f46" stroke-width="1.5"/>
+    <text x="64" y="24" fill="#f8fafc" font-size="11" class="txt">DARRYL</text>
+    <text x="64" y="40" fill="#94a3b8" font-size="9" class="txt">ENGINEER</text>
+    <rect x="64" y="46" width="52" height="14" fill="#09090b" stroke="#27272a" stroke-width="1"/>
+    <text x="68" y="56" fill="#38bdf8" font-size="8" class="txt">/darryl</text>
+    <rect x="8" y="68" width="108" height="18" fill="#09090b" stroke="#27272a" stroke-width="1"/>
+    <text x="14" y="80" fill="#e2e8f0" font-size="9" class="txt">/darryl</text>
+    <rect x="8" y="92" width="108" height="8" fill="#09090b" stroke="#27272a" stroke-width="1"/>
+    <rect x="9" y="93" width="106" height="6" fill="#10b981"/>
+  </g>
+</svg>
