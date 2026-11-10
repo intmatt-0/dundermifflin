@@ -1,17 +1,35 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 380" width="100%">
   <style>
     @keyframes bob { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-1px); } }
-    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+    @keyframes blink { 0%, 90%, 100% { opacity: 1; } 93%, 97% { opacity: 0; } }
+    @keyframes sip { 0%, 65%, 100% { transform: translateY(0px); } 75%, 90% { transform: translateY(-1px); } }
+    @keyframes steam1 { 0%, 100% { opacity: 0.85; transform: translateY(0px); } 50% { opacity: 0.2; transform: translateY(-1px); } }
+    @keyframes steam2 { 0%, 100% { opacity: 0.2; transform: translateY(-1px); } 50% { opacity: 0.85; transform: translateY(0px); } }
+    @keyframes sigh { 0%, 100% { opacity: 0.85; transform: translateY(0px); } 50% { opacity: 0.2; transform: translateY(1px); } }
+    @keyframes look { 0%, 70%, 100% { transform: translateY(0px); } 78%, 92% { transform: translateY(-1px); } }
+    @keyframes note { 0%, 100% { opacity: 0.95; transform: translateY(0px); } 50% { opacity: 0.25; transform: translateY(-1px); } }
+    @keyframes glint { 0%, 72%, 100% { opacity: 0; transform: translateX(0px); } 78% { opacity: 0.95; transform: translateX(0px); } 86% { opacity: 0.95; transform: translateX(1px); } 92% { opacity: 0; transform: translateX(1px); } }
+    @keyframes badge { 0%, 100% { opacity: 0.9; } 50% { opacity: 0.25; } }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.35; } }
     .bob { animation: bob 1.6s steps(1, end) infinite; }
+    .blink { animation: blink 3.5s steps(1, end) infinite 0.5s; }
+    .mug { animation: sip 2.8s steps(1, end) infinite; }
+    .s1 { animation: steam1 1.4s steps(1, end) infinite; }
+    .s2 { animation: steam2 1.4s steps(1, end) infinite; }
+    .sigh { animation: sigh 1.8s steps(1, end) infinite; }
+    .brows { animation: look 3.4s steps(1, end) infinite; }
+    .note { animation: note 1.15s steps(1, end) infinite; }
+    .glint { animation: glint 3.0s steps(1, end) infinite; }
+    .badge { animation: badge 1.4s steps(1, end) infinite; }
     .led { animation: pulse 1.2s steps(2, end) infinite; }
     .txt { font-family: 'Courier New', Consolas, monospace; font-weight: bold; }
-  </style>
+</style>
   <!-- Outer Card -->
   <rect x="6" y="6" width="830" height="370" fill="#27272a"/>
   <rect x="2" y="2" width="830" height="370" fill="#111113" stroke="#27272a" stroke-width="2"/>
 
   <!-- Top Header -->
-  <g transform="translate(18, 16) scale(3)" shape-rendering="crispEdges" class="bob">
+  <svg x="18" y="16" width="48" height="48" viewBox="0 0 16 16" shape-rendering="crispEdges">
     <rect x="0" y="0" width="16" height="16" fill="#1e293b"/>
   <rect x="2" y="10" width="12" height="6" fill="#27272a"/><rect x="6" y="10" width="4" height="6" fill="#f8fafc"/>
   <rect x="7" y="10" width="2" height="1" fill="#b91c1c"/><rect x="7" y="11" width="2" height="4" fill="#ef4444"/>
@@ -29,7 +47,7 @@
   <g class="mug">
     <rect x="11" y="11" width="3" height="3" fill="#f8fafc"/><rect x="14" y="12" width="1" height="1" fill="#cbd5e1"/><rect x="12" y="12" width="1" height="1" fill="#2563eb"/>
   </g>
-  </g>
+  </svg>
   <rect x="18" y="16" width="48" height="48" fill="none" stroke="#3f3f46" stroke-width="1.5"/>
   <text x="78" y="32" fill="#f8fafc" font-size="15" class="txt">Dunder Mifflin SDD Firm Setup</text>
   <rect x="352" y="19" width="160" height="18" fill="#09090b" stroke="#27272a" stroke-width="1"/>
@@ -58,7 +76,7 @@
   <g transform="translate(18, 118)">
     <rect x="3" y="3" width="256" height="112" fill="#27272a"/>
     <rect x="0" y="0" width="256" height="112" fill="#09090b" stroke="#27272a" stroke-width="1.5"/>
-    <g transform="translate(10, 10) scale(2.4)" shape-rendering="crispEdges" class="bob">
+    <svg x="10" y="10" width="40" height="40" viewBox="0 0 16 16" shape-rendering="crispEdges">
       <rect x="0" y="0" width="16" height="16" fill="#292524"/>
   <rect x="2" y="10" width="12" height="6" fill="#a89070"/><rect x="6" y="10" width="4" height="6" fill="#fef3c7"/>
   <rect x="7" y="10" width="2" height="5" fill="#78350f"/>
@@ -72,14 +90,14 @@
     <rect x="6" y="8" width="4" height="1" fill="#a16247"/>
     <rect x="12" y="4" width="1" height="2" fill="#38bdf8" class="sigh"/>
   </g>
-    </g>
-    <rect x="10" y="10" width="38.4" height="38.4" fill="none" stroke="#27272a" stroke-width="1"/>
-    <text x="56" y="24" fill="#f8fafc" font-size="11" class="txt">Toby Flenderson</text>
-    <text x="56" y="38" fill="#a1a1aa" font-size="9" class="txt">Planner &amp; Spec Definer (/toby)</text>
+    </svg>
+    <rect x="10" y="10" width="40" height="40" fill="none" stroke="#3f3f46" stroke-width="1"/>
+    <text x="58" y="24" fill="#f8fafc" font-size="11" class="txt">Toby Flenderson</text>
+    <text x="58" y="38" fill="#a1a1aa" font-size="9" class="txt">Planner &amp; Spec Definer (/toby)</text>
     <rect x="194" y="10" width="52" height="16" fill="#052e16" stroke="#10b981" stroke-width="1"/>
     <rect x="199" y="15" width="5" height="5" fill="#10b981" class="led"/>
     <text x="208" y="21" fill="#10b981" font-size="9" class="txt">READY</text>
-    <text x="10" y="64" fill="#a1a1aa" font-size="9" class="txt">✅ Lock Surface Profile &amp; Non-Goals</text>
+    <text x="10" y="66" fill="#a1a1aa" font-size="9" class="txt">✅ Lock Surface Profile &amp; Non-Goals</text>
     <text x="10" y="84" fill="#71717a" font-size="9" class="txt">.firm/01-spec-plan.md</text>
     <text x="218" y="84" fill="#f8fafc" font-size="9" class="txt">100%</text>
     <rect x="10" y="90" width="236" height="8" fill="#18181b" stroke="#27272a" stroke-width="1"/>
@@ -89,7 +107,7 @@
   <g transform="translate(286, 118)">
     <rect x="3" y="3" width="256" height="112" fill="#27272a"/>
     <rect x="0" y="0" width="256" height="112" fill="#09090b" stroke="#27272a" stroke-width="1.5"/>
-    <g transform="translate(10, 10) scale(2.4)" shape-rendering="crispEdges" class="bob">
+    <svg x="10" y="10" width="40" height="40" viewBox="0 0 16 16" shape-rendering="crispEdges">
       <rect x="0" y="0" width="16" height="16" fill="#172554"/>
   <rect x="2" y="10" width="12" height="6" fill="#f8fafc"/><rect x="2" y="11" width="2" height="5" fill="#e2e8f0"/><rect x="12" y="11" width="2" height="5" fill="#e2e8f0"/>
   <rect x="7" y="10" width="2" height="5" fill="#1e3a8a"/><rect x="7" y="11" width="2" height="1" fill="#3b82f6"/>
@@ -106,14 +124,14 @@
     <rect x="6" y="8" width="3" height="1" fill="#9a5b42"/>
     <rect x="9" y="7" width="1" height="1" fill="#9a5b42" class="brows"/>
   </g>
-    </g>
-    <rect x="10" y="10" width="38.4" height="38.4" fill="none" stroke="#27272a" stroke-width="1"/>
-    <text x="56" y="24" fill="#f8fafc" font-size="11" class="txt">Jim Halpert</text>
-    <text x="56" y="38" fill="#a1a1aa" font-size="9" class="txt">UX Designer (/jim)</text>
+    </svg>
+    <rect x="10" y="10" width="40" height="40" fill="none" stroke="#3f3f46" stroke-width="1"/>
+    <text x="58" y="24" fill="#f8fafc" font-size="11" class="txt">Jim Halpert</text>
+    <text x="58" y="38" fill="#a1a1aa" font-size="9" class="txt">UX Designer (/jim)</text>
     <rect x="194" y="10" width="52" height="16" fill="#052e16" stroke="#10b981" stroke-width="1"/>
     <rect x="199" y="15" width="5" height="5" fill="#10b981" class="led"/>
     <text x="208" y="21" fill="#10b981" font-size="9" class="txt">READY</text>
-    <text x="10" y="64" fill="#a1a1aa" font-size="9" class="txt">✅ Complete 4-State Matrix &amp; flows</text>
+    <text x="10" y="66" fill="#a1a1aa" font-size="9" class="txt">✅ Complete 4-State Matrix &amp; flows</text>
     <text x="10" y="84" fill="#71717a" font-size="9" class="txt">.firm/02-ux-design.md</text>
     <text x="218" y="84" fill="#f8fafc" font-size="9" class="txt">100%</text>
     <rect x="10" y="90" width="236" height="8" fill="#18181b" stroke="#27272a" stroke-width="1"/>
@@ -123,7 +141,7 @@
   <g transform="translate(554, 118)">
     <rect x="3" y="3" width="256" height="112" fill="#27272a"/>
     <rect x="0" y="0" width="256" height="112" fill="#09090b" stroke="#27272a" stroke-width="1.5"/>
-    <g transform="translate(10, 10) scale(2.4)" shape-rendering="crispEdges" class="bob">
+    <svg x="10" y="10" width="40" height="40" viewBox="0 0 16 16" shape-rendering="crispEdges">
       <rect x="0" y="0" width="16" height="16" fill="#450a0a"/>
   <rect x="2" y="10" width="12" height="6" fill="#bae6fd"/><rect x="4" y="10" width="8" height="6" fill="#dc2626"/><rect x="6" y="10" width="4" height="2" fill="#bae6fd"/>
   <rect x="6" y="10" width="4" height="1" fill="#eab308"/><rect x="7" y="11" width="2" height="4" fill="#1e3a8a"/>
@@ -137,14 +155,14 @@
     </g>
     <rect x="6" y="8" width="4" height="1" fill="#ffffff"/><rect x="6" y="9" width="4" height="1" fill="#b91c1c"/>
   </g>
-    </g>
-    <rect x="10" y="10" width="38.4" height="38.4" fill="none" stroke="#27272a" stroke-width="1"/>
-    <text x="56" y="24" fill="#f8fafc" font-size="11" class="txt">Andy Bernard</text>
-    <text x="56" y="38" fill="#a1a1aa" font-size="9" class="txt">UI Designer (/andy)</text>
+    </svg>
+    <rect x="10" y="10" width="40" height="40" fill="none" stroke="#3f3f46" stroke-width="1"/>
+    <text x="58" y="24" fill="#f8fafc" font-size="11" class="txt">Andy Bernard</text>
+    <text x="58" y="38" fill="#a1a1aa" font-size="9" class="txt">UI Designer (/andy)</text>
     <rect x="194" y="10" width="52" height="16" fill="#052e16" stroke="#10b981" stroke-width="1"/>
     <rect x="199" y="15" width="5" height="5" fill="#10b981" class="led"/>
     <text x="208" y="21" fill="#10b981" font-size="9" class="txt">READY</text>
-    <text x="10" y="64" fill="#a1a1aa" font-size="9" class="txt">✅ WCAG tokens &amp; anti-slop visual spec</text>
+    <text x="10" y="66" fill="#a1a1aa" font-size="9" class="txt">✅ WCAG tokens &amp; anti-slop visual spec</text>
     <text x="10" y="84" fill="#71717a" font-size="9" class="txt">.firm/03-ui-design.md</text>
     <text x="218" y="84" fill="#f8fafc" font-size="9" class="txt">100%</text>
     <rect x="10" y="90" width="236" height="8" fill="#18181b" stroke="#27272a" stroke-width="1"/>
@@ -154,7 +172,7 @@
   <g transform="translate(18, 244)">
     <rect x="3" y="3" width="256" height="112" fill="#27272a"/>
     <rect x="0" y="0" width="256" height="112" fill="#09090b" stroke="#27272a" stroke-width="1.5"/>
-    <g transform="translate(10, 10) scale(2.4)" shape-rendering="crispEdges" class="bob">
+    <svg x="10" y="10" width="40" height="40" viewBox="0 0 16 16" shape-rendering="crispEdges">
       <rect x="0" y="0" width="16" height="16" fill="#422006"/>
   <rect x="2" y="10" width="12" height="6" fill="#eab308"/>
   <rect x="7" y="10" width="2" height="5" fill="#451a03"/><rect x="7" y="11" width="2" height="1" fill="#78350f"/>
@@ -171,14 +189,14 @@
     </g>
     <rect x="6" y="8" width="4" height="1" fill="#7c2d12"/>
   </g>
-    </g>
-    <rect x="10" y="10" width="38.4" height="38.4" fill="none" stroke="#27272a" stroke-width="1"/>
-    <text x="56" y="24" fill="#f8fafc" font-size="11" class="txt">Dwight Schrute</text>
-    <text x="56" y="38" fill="#a1a1aa" font-size="9" class="txt">Software Architect (/dwight)</text>
+    </svg>
+    <rect x="10" y="10" width="40" height="40" fill="none" stroke="#3f3f46" stroke-width="1"/>
+    <text x="58" y="24" fill="#f8fafc" font-size="11" class="txt">Dwight Schrute</text>
+    <text x="58" y="38" fill="#a1a1aa" font-size="9" class="txt">Software Architect (/dwight)</text>
     <rect x="194" y="10" width="52" height="16" fill="#052e16" stroke="#10b981" stroke-width="1"/>
     <rect x="199" y="15" width="5" height="5" fill="#10b981" class="led"/>
     <text x="208" y="21" fill="#10b981" font-size="9" class="txt">READY</text>
-    <text x="10" y="64" fill="#a1a1aa" font-size="9" class="txt">✅ Lock file tree, schemas &amp; YAGNI</text>
+    <text x="10" y="66" fill="#a1a1aa" font-size="9" class="txt">✅ Lock file tree, schemas &amp; YAGNI</text>
     <text x="10" y="84" fill="#71717a" font-size="9" class="txt">.firm/04-architecture.md</text>
     <text x="218" y="84" fill="#f8fafc" font-size="9" class="txt">100%</text>
     <rect x="10" y="90" width="236" height="8" fill="#18181b" stroke="#27272a" stroke-width="1"/>
@@ -188,7 +206,7 @@
   <g transform="translate(286, 244)">
     <rect x="3" y="3" width="256" height="112" fill="#27272a"/>
     <rect x="0" y="0" width="256" height="112" fill="#09090b" stroke="#27272a" stroke-width="1.5"/>
-    <g transform="translate(10, 10) scale(2.4)" shape-rendering="crispEdges" class="bob">
+    <svg x="10" y="10" width="40" height="40" viewBox="0 0 16 16" shape-rendering="crispEdges">
       <rect x="0" y="0" width="16" height="16" fill="#1e3a8a"/>
   <rect x="2" y="10" width="12" height="6" fill="#2563eb"/><rect x="5" y="10" width="6" height="1" fill="#1e3a8a"/>
   <rect x="9" y="12" width="3" height="1" fill="#f8fafc"/>
@@ -201,14 +219,14 @@
     </g>
     <rect x="6" y="8" width="4" height="2" fill="#09090b"/><rect x="7" y="8" width="2" height="1" fill="#f8fafc"/>
   </g>
-    </g>
-    <rect x="10" y="10" width="38.4" height="38.4" fill="none" stroke="#27272a" stroke-width="1"/>
-    <text x="56" y="24" fill="#f8fafc" font-size="11" class="txt">Darryl Philbin</text>
-    <text x="56" y="38" fill="#a1a1aa" font-size="9" class="txt">Software Engineer (/darryl)</text>
+    </svg>
+    <rect x="10" y="10" width="40" height="40" fill="none" stroke="#3f3f46" stroke-width="1"/>
+    <text x="58" y="24" fill="#f8fafc" font-size="11" class="txt">Darryl Philbin</text>
+    <text x="58" y="38" fill="#a1a1aa" font-size="9" class="txt">Software Engineer (/darryl)</text>
     <rect x="194" y="10" width="52" height="16" fill="#052e16" stroke="#10b981" stroke-width="1"/>
     <rect x="199" y="15" width="5" height="5" fill="#10b981" class="led"/>
     <text x="208" y="21" fill="#10b981" font-size="9" class="txt">READY</text>
-    <text x="10" y="64" fill="#a1a1aa" font-size="9" class="txt">✅ Production code &amp; live verification</text>
+    <text x="10" y="66" fill="#a1a1aa" font-size="9" class="txt">✅ Production code &amp; live verification</text>
     <text x="10" y="84" fill="#71717a" font-size="9" class="txt">.firm/05-build-log.md</text>
     <text x="218" y="84" fill="#f8fafc" font-size="9" class="txt">100%</text>
     <rect x="10" y="90" width="236" height="8" fill="#18181b" stroke="#27272a" stroke-width="1"/>
