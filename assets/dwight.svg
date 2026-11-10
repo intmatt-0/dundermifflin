@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" shape-rendering="crispEdges" width="64" height="64">
+  <style>
+    @keyframes bob { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-1px); } }
+    @keyframes blink { 0%, 90%, 100% { opacity: 1; } 93%, 97% { opacity: 0; } }
+    @keyframes glint { 0%, 72%, 100% { opacity: 0; transform: translateX(0px); } 78% { opacity: 0.95; transform: translateX(0px); } 86% { opacity: 0.95; transform: translateX(1px); } 92% { opacity: 0; transform: translateX(1px); } }
+    .bob { animation: bob 1.5s steps(1, end) infinite 0.45s; }
+    .blink { animation: blink 4.5s steps(1, end) infinite 1.7s; }
+    .glint { animation: glint 3.0s steps(1, end) infinite; }
+  </style>
+  <rect x="0" y="0" width="16" height="16" fill="#422006"/>
+  <rect x="2" y="10" width="12" height="6" fill="#eab308"/>
+  <rect x="7" y="10" width="2" height="5" fill="#451a03"/><rect x="7" y="11" width="2" height="1" fill="#78350f"/>
+  <g class="bob">
+    <rect x="3" y="2" width="4" height="2" fill="#3b2619"/><rect x="9" y="2" width="4" height="2" fill="#3b2619"/>
+    <rect x="3" y="4" width="1" height="3" fill="#3b2619"/><rect x="12" y="4" width="1" height="3" fill="#3b2619"/>
+    <rect x="7" y="2" width="2" height="2" fill="#f5c6a5"/><rect x="4" y="4" width="8" height="6" fill="#f5c6a5"/>
+    <rect x="4" y="5" width="3" height="2" fill="#d97706"/><rect x="9" y="5" width="3" height="2" fill="#d97706"/><rect x="7" y="5" width="2" height="1" fill="#d97706"/>
+    <g class="blink">
+      <rect x="5" y="6" width="1" height="1" fill="#18181b"/><rect x="10" y="6" width="1" height="1" fill="#18181b"/>
+    </g>
+    <g class="glint">
+      <rect x="4" y="5" width="1" height="1" fill="#fef08a"/><rect x="9" y="5" width="1" height="1" fill="#fef08a"/>
+    </g>
+    <rect x="6" y="8" width="4" height="1" fill="#7c2d12"/>
+  </g>
+</svg>

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" shape-rendering="crispEdges" width="64" height="64">
+  <style>
+    @keyframes bob { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-1px); } }
+    @keyframes blink { 0%, 90%, 100% { opacity: 1; } 93%, 97% { opacity: 0; } }
+    @keyframes note { 0%, 100% { opacity: 0.95; transform: translateY(0px); } 50% { opacity: 0.25; transform: translateY(-1px); } }
+    .bob { animation: bob 1.15s steps(1, end) infinite 0.15s; }
+    .blink { animation: blink 2.9s steps(1, end) infinite 0.2s; }
+    .note { animation: note 1.15s steps(1, end) infinite; }
+  </style>
+  <rect x="0" y="0" width="16" height="16" fill="#450a0a"/>
+  <rect x="2" y="10" width="12" height="6" fill="#bae6fd"/><rect x="4" y="10" width="8" height="6" fill="#dc2626"/><rect x="6" y="10" width="4" height="2" fill="#bae6fd"/>
+  <rect x="6" y="10" width="4" height="1" fill="#eab308"/><rect x="7" y="11" width="2" height="4" fill="#1e3a8a"/>
+  <rect x="13" y="3" width="1" height="2" fill="#fde047" class="note"/>
+  <rect x="14" y="2" width="1" height="1" fill="#fde047" class="note"/>
+  <g class="bob">
+    <rect x="4" y="2" width="8" height="2" fill="#5c3a21"/><rect x="3" y="3" width="2" height="3" fill="#5c3a21"/><rect x="11" y="3" width="2" height="2" fill="#5c3a21"/>
+    <rect x="4" y="4" width="8" height="6" fill="#f5c6a5"/>
+    <g class="blink">
+      <rect x="5" y="6" width="1" height="1" fill="#18181b"/><rect x="10" y="6" width="1" height="1" fill="#18181b"/>
+    </g>
+    <rect x="6" y="8" width="4" height="1" fill="#ffffff"/><rect x="6" y="9" width="4" height="1" fill="#b91c1c"/>
+  </g>
+</svg>

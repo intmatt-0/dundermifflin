@@ -1,0 +1,12 @@
+{
+  "name": "dundermifflin",
+  "displayName": "Dunder Mifflin (SDD Construction Firm)",
+  "version": "1.0.0",
+  "description": "Spec-Driven Development construction firm powered by The Office crew: Michael Scott (/dundermifflin Foreman), Toby (/toby Spec Planner), Jim (/jim UX Designer), Andy (/andy UI Designer), Dwight (/dwight Software Architect), and Darryl (/darryl Software Engineer), with live pixel-art visual task progress.",
+  "logo": "assets/logo.svg",
+  "suggestedPrompts": [
+    "Use /dundermifflin with SPEC.md to plan, design, architect, and build this project",
+    "Use /jim to redesign the user flow and 4-state matrix in .firm/02-ux-design.md",
+    "Use /dwight to audit and update the system architecture in .firm/04-architecture.md"
+  ]
+}
