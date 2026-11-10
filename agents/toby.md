@@ -56,6 +56,10 @@ Write the complete blueprint to `.firm/01-spec-plan.md` using this exact structu
   - [Selected Surface Profile (Profile A, B, or C), honored user stack/feature mandates, and applied Law 1 scope discipline where the spec was silent]
 - **Open Flags / Questions for User Quality Check**:
   - [Ambiguities, contradictions, or high-impact trade-offs requiring user sign-off at Gate 1, or `None`]
+- **🎓 The Scranton Apprenticeship (What You Learned)**:
+  - **Plain English**: [1-2 sentences on what this spec accomplishes in simple terms]
+  - **Dev Lesson**: [Why defining scope and trust boundaries before code prevents project failure]
+  - **Terms Decoded**: [1-2 terms e.g. "Acceptance Criteria", "Non-Goals" explained with real-world analogies]
 
 ---
 

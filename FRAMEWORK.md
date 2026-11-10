@@ -71,7 +71,23 @@ To maintain maximum output quality while preventing rate lockouts and preserving
 
 ---
 
-## 6. Visual Task Progress Board & Quality Check Format
+## 6. Mentorship & Plain-English "Behind the Scenes" Standard (Learn While Prompting)
+
+To ensure the developer builds real architectural understanding rather than being a disconnected "vibe coder":
+
+1. **Mandatory ELI5 "Behind the Scenes" in Every Quality Check**:
+   - At every Quality-Check Gate (1, 2, and 3) and direct character interaction, the agent MUST include a short **"🎓 The Scranton Apprenticeship (Learn What We Just Did)"** block (maximum 8–12 lines) written in plain, friendly English.
+   - It must answer 3 simple questions without gatekeeping jargon:
+     1. **What did we build/decide?** (In plain English a beginner understands immediately).
+     2. **Why did we do it this way?** (The core software engineering reason, e.g., why we separated data from UI, or why we needed a loading state).
+     3. **Key Term Breakdown**: 1–2 development terms used in this step (e.g. *API, Schema, State, Idempotency, Contract, ORM*) translated into everyday real-world analogies (e.g., comparing an API to a restaurant waiter).
+
+2. **Jargon-Free Error Explanations**:
+   - Whenever `darryl` or another specialist hits an error or explains a fix in `.firm/05-build-log.md`, they must explain what broke in simple mechanical terms before showing terminal outputs.
+
+---
+
+## 7. Visual Task Progress Board & Quality Check Format
 
 ### Visual Task Progress Board (`dundermifflin-board.html`)
 

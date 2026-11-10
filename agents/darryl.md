@@ -57,6 +57,10 @@ Write and update the complete build ledger at `.firm/05-build-log.md` using this
   - [How Law 5 and the locked Surface Profile (Profile A, B, or C) governed implementation and verification]
 - **Open Flags / Questions for User Quality Check**:
   - [Any runtime discoveries or environment notes for user sign-off at Gate 3 (Quality Check 3), or `None`]
+- **🎓 The Scranton Apprenticeship (Code Deconstructed)**:
+  - **Plain English**: [What this code actually does under the hood in simple terms]
+  - **Why It's Built This Way**: [Why we structured the functions or data logic like this]
+  - **Terms Decoded**: [1-2 engineering concepts e.g. "Unit Test", "Idempotency", "State Machine" with everyday analogies]
 
 ---
 
