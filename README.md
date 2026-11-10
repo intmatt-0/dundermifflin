@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/banner.svg" alt="Dunder Mifflin — Multi-Agent Software Construction Firm Banner" width="100%" />
+<img src="assets/banner.svg?v=2" alt="Dunder Mifflin — Multi-Agent Software Construction Firm Banner" width="100%" />
 
 <br />
 
@@ -103,7 +103,7 @@ flowchart TD
 Whenever you run `/dundermifflin` (or any individual `/toby`, `/jim`, `/andy`, `/dwight`, `/darryl` command), the firm automatically creates and updates `dundermifflin-board.html` in your conversation's **Artifacts** tab and renders it inline:
 
 <div align="center">
-  <img src="assets/board-preview.svg" alt="Dunder Mifflin 8-Bit Visual Task Progress Board Preview" width="100%" />
+  <img src="assets/board-preview.svg?v=2" alt="Dunder Mifflin 8-Bit Visual Task Progress Board Preview" width="100%" />
 </div>
 
 ### Board Highlights
