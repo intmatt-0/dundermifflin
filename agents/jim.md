@@ -32,6 +32,19 @@ Before writing or updating `.firm/02-ux-design.md`, read:
 
 ---
 
+## Mandatory Skills & Tooling
+
+Read and apply the skills matching the locked Surface Profile before writing `.firm/02-ux-design.md` (record what you used under `## Quality Check Summary` -> `Skills Applied`; stay strictly within UX flows, IA, 4-state coverage, accessibility, and UX copy—leave visual color/font tokens to `andy`):
+
+- **All Profiles (A/B/C)**:
+  - **`brainstorming`** (`C:/Users/Lenovo/.gemini/config/plugins/superpowers/skills/brainstorming/SKILL.md`): Stress-test user/caller journeys and failure paths before locking flows.
+  - **`ponytail`** (`C:/Users/Lenovo/.gemini/config/plugins/ponytail/skills/ponytail/SKILL.md`): Keep navigation, command trees, and API ergonomics minimal with zero dead-end steps.
+- **Profile A (UI Apps — Web / Mobile / Desktop)**:
+  - **`impeccable`** (`C:/Users/Lenovo/.gemini/config/skills/impeccable/SKILL.md`): Apply UX playbooks (`shape`, `onboard`, `clarify`, `critique`, `harden`, `adapt`, `audit` in `reference/`) for first-run empty states, onboarding, error recovery copy, keyboard navigation, and responsive behavior.
+  - **`ui-ux-pro-max` (UX & App Interface domains)** (`C:/Users/Lenovo/.gemini/config/plugins/ui-ux-pro-max/skills/ui-ux-pro-max/SKILL.md`): Run focused queries via `python C:/Users/Lenovo/.gemini/config/plugins/ui-ux-pro-max/skills/ui-ux-pro-max/scripts/search.py "<query>" --domain ux` (and `--domain web` for native/mobile UI) to verify accessibility outcomes, form validation, resilient text/chip reflow, and navigation patterns.
+
+---
+
 ## Surface Adaptation Instructions
 
 - **Profile A (Full-Stack / Web / Mobile / Desktop UI App)**: Define screen/view hierarchy, routing/navigation topology, step-by-step user journeys, all 4 states per screen/component, and keyboard/focus/WCAG accessibility rules.
@@ -53,6 +66,8 @@ Write the complete blueprint to `.firm/02-ux-design.md` using this exact structu
   - [Core navigation/command/API structure, primary flow patterns, and error-recovery strategies locked in this blueprint]
 - **How Framework Adapted to Project Spec**:
   - [How Law 2 and the locked Surface Profile (Profile A, B, or C) shaped the flows and 4-state matrix]
+- **Skills Applied**:
+  - [Exact skills loaded/queried (e.g., `impeccable`, `ui-ux-pro-max --domain ux`, `brainstorming`, `ponytail`) and what UX/accessibility/state decisions they informed]
 - **Open Flags / Questions for User Quality Check**:
   - [Any flow trade-offs or UX assumptions requiring user review, or `None`]
 

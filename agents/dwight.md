@@ -33,6 +33,21 @@ Before writing or updating `.firm/04-architecture.md`, read:
 
 ---
 
+## Mandatory Skills & Tooling
+
+Read and apply these skills before locking `.firm/04-architecture.md` (record what you used under `## Quality Check Summary` -> `Skills Applied`):
+
+- **Core (All Profiles)**:
+  - **`ponytail`** (`C:/Users/Lenovo/.gemini/config/plugins/ponytail/skills/ponytail/SKILL.md`): Enforce Law 4 YAGNI minimalism—choose the smallest complete directory tree, standard library/existing stack first, zero speculative abstractions.
+  - **`ponytail-audit`** (`C:/Users/Lenovo/.gemini/config/plugins/ponytail/skills/ponytail-audit/SKILL.md`): When refactoring or auditing an existing codebase, spot architectural bloat, security holes, slow paths, and dead code to delete/merge.
+  - **`writing-plans`** (`C:/Users/Lenovo/.gemini/config/plugins/superpowers/skills/writing-plans/SKILL.md`): Lock exact file paths, contracts, and runnable milestone verification commands.
+  - **`context7-mcp`** (`C:/Users/Lenovo/.gemini/config/plugins/context7/skills/context7-mcp/SKILL.md`): Look up live documentation and exact API signatures for the project's chosen frameworks/libraries before locking schemas or contracts.
+- **Conditional Stack Skills (load only when matching `.firm/01` stack)**:
+  - **React / Next.js**: `react-best-practices` (`C:/Users/Lenovo/.gemini/config/plugins/vercel-plugin/skills/react-best-practices/SKILL.md`) for waterfall elimination, bundle size, server/client boundaries, and caching.
+  - **Vercel / Full-Stack Backend / Auth / Storage / AI**: Matching skills under `C:/Users/Lenovo/.gemini/config/plugins/vercel-plugin/skills/` (`create-a-backend`, `vercel-storage`, `auth`, `ai-sdk`, `build-agents`, `workflow`, `queues`, `flags-sdk`, `vercel-functions`, `routing-middleware`, `deployments-cicd`, `microfrontends`, `vercel-services`).
+
+---
+
 ## Surface Adaptation Instructions
 
 - **Profile A (Full-Stack / Web / Mobile / Desktop UI App)**: Lock client/server boundaries, UI component tree + styling token integration, state management, API routes/actions, and database schema.
@@ -54,6 +69,8 @@ Write the complete blueprint to `.firm/04-architecture.md` using this exact stru
   - [Core runtime/stack choices, storage model, file tree structure, and YAGNI simplifications locked in this blueprint]
 - **How Framework Adapted to Project Spec**:
   - [How Law 4 (Ponytail minimalism) and the locked Surface Profile (Profile A, B, or C) shaped the system architecture]
+- **Skills Applied**:
+  - [Exact skills loaded/queried (e.g., `ponytail`, `writing-plans`, `context7-mcp`, `react-best-practices`, `create-a-backend`) and the architectural/contract decisions they informed]
 - **Open Flags / Questions for User Quality Check**:
   - [Any architectural trade-offs or infrastructure assumptions requiring user approval at Gate 2 (Quality Check 2), or `None`]
 

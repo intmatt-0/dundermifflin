@@ -34,6 +34,29 @@ Before writing code or updating `.firm/05-build-log.md`, read:
 
 ---
 
+## Mandatory Skills & Tooling
+
+Load and apply the core engineering skills plus any stack/UI skills required by `.firm/03` and `.firm/04` (record what you used under `## Quality Check Summary` -> `Skills Applied`):
+
+- **Core (All Profiles)**:
+  - **`test-driven-development`** (`C:/Users/Lenovo/.gemini/config/plugins/superpowers/skills/test-driven-development/SKILL.md`): Write and run tests/self-checks alongside non-trivial logic (branches, loops, parsers, validation, security).
+  - **`systematic-debugging`** (`C:/Users/Lenovo/.gemini/config/plugins/superpowers/skills/systematic-debugging/SKILL.md`): Diagnose root causes methodically before editing (respecting the 2-turn anti-loop circuit breaker).
+  - **`verification-before-completion`** (`C:/Users/Lenovo/.gemini/config/plugins/superpowers/skills/verification-before-completion/SKILL.md`): Never report `PASS` without running the actual build/test/smoke commands after the final edit and observing clean exit codes.
+  - **`ponytail`** (`C:/Users/Lenovo/.gemini/config/plugins/ponytail/skills/ponytail/SKILL.md`) & **`ponytail-review`** (`C:/Users/Lenovo/.gemini/config/plugins/ponytail/skills/ponytail-review/SKILL.md`): Keep diffs minimal, reuse existing helpers, document any deferred limit with `shortcut: <limit>, <when to upgrade>`, and check connected callers.
+  - **`context7-mcp`** (`C:/Users/Lenovo/.gemini/config/plugins/context7/skills/context7-mcp/SKILL.md`): Confirm exact framework/SDK syntax before writing non-trivial integrations.
+- **Profile A Frontend / UI Implementation (when building UI from `.firm/02` & `.firm/03`)**:
+  - **`ui-ux-pro-max` (`--stack <stack>`)** (`C:/Users/Lenovo/.gemini/config/plugins/ui-ux-pro-max/skills/ui-ux-pro-max/SKILL.md`): Query stack-specific rules via `python C:/Users/Lenovo/.gemini/config/plugins/ui-ux-pro-max/skills/ui-ux-pro-max/scripts/search.py "<query>" --stack <stack>`.
+  - **`ui-styling`** (`C:/Users/Lenovo/.gemini/config/plugins/ui-ux-pro-max/skills/ui-styling/SKILL.md`) & **`impeccable`** (`C:/Users/Lenovo/.gemini/config/skills/impeccable/SKILL.md`, especially `reference/craft-floor.md`, `harden`, `polish`, `audit`): Implement tokens, Tailwind/shadcn patterns, resilient text, and accessibility checks accurately.
+  - **Motion / Scroll / Component Libraries (when specified in `.firm/03`)**:
+    - **GSAP** (`C:/Users/Lenovo/.gemini/config/plugins/gsap-skills/skills/` — `gsap-core`, `gsap-timeline`, `gsap-scrolltrigger`, `gsap-plugins`, `gsap-utils`, `gsap-react` `useGSAP`, `gsap-performance`, `gsap-frameworks`)
+    - **Lenis** (`C:/Users/Lenovo/.gemini/config/skills/lenis/SKILL.md` — `lenis/dist/lenis.css`, GSAP ticker sync with `autoRaf: false`, `data-lenis-prevent`, cleanup on unmount)
+    - **React Bits** (`C:/Users/Lenovo/.gemini/config/skills/react-bits/SKILL.md` — `npx shadcn@latest add @react-bits/<Name>-<JS|TS>-<CSS|TW>` matched to project flavor)
+- **Conditional Stack Skills**:
+  - **React / Next.js**: `react-best-practices` (`C:/Users/Lenovo/.gemini/config/plugins/vercel-plugin/skills/react-best-practices/SKILL.md`).
+  - **Vercel / Full-Stack End-to-End Verification**: Matching `vercel-plugin` skills (`ai-sdk`, `auth`, `vercel-storage`, `flags-sdk`, `verification`, etc.).
+
+---
+
 ## Surface Adaptation Instructions
 
 - **Profile A (Full-Stack / Web / Mobile / Desktop UI App)**: Implement data layer, backend handlers, and UI components wired to design tokens, all 4 states, and keyboard accessibility rules; run typecheck, unit/integration tests, and build verification.
@@ -55,6 +78,8 @@ Write and update the complete build ledger at `.firm/05-build-log.md` using this
   - [Summary of completed milestones, verified acceptance criteria, and zero-stub implementation status]
 - **How Framework Adapted to Project Spec**:
   - [How Law 5 and the locked Surface Profile (Profile A, B, or C) governed implementation and verification]
+- **Skills Applied**:
+  - [Exact skills loaded/executed (e.g., `test-driven-development`, `verification-before-completion`, `ponytail`, `gsap-react`, `lenis`, `react-bits`, `ui-styling`) and what tests/checks/patterns they enforced]
 - **Open Flags / Questions for User Quality Check**:
   - [Any runtime discoveries or environment notes for user sign-off at Gate 3 (Quality Check 3), or `None`]
 - **🎓 The Scranton Apprenticeship (Code Deconstructed)**:

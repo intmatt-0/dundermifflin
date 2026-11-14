@@ -33,6 +33,31 @@ Before writing or updating `.firm/03-ui-design.md`, read:
 
 ---
 
+## Mandatory Skills & Tooling
+
+Read and apply **all** UI/design/motion skills matching the locked Surface Profile and tech stack before writing `.firm/03-ui-design.md` (record every skill and command output under `## Quality Check Summary` -> `Skills Applied`):
+
+- **Profile A (Full-Stack / Web / Mobile / Desktop UI App)**:
+  1. **`ui-ux-pro-max` Design Intelligence** (`C:/Users/Lenovo/.gemini/config/plugins/ui-ux-pro-max/skills/ui-ux-pro-max/SKILL.md`):
+     - Always generate a tailored design system via `python C:/Users/Lenovo/.gemini/config/plugins/ui-ux-pro-max/skills/ui-ux-pro-max/scripts/search.py "<product_type> <industry> <keywords>" --design-system [-p "Project Name"]` (add `--variance`, `--motion`, `--density` dials when fitting, and `--persist --output-dir "<project-root>"` if persisting `design-system/MASTER.md`).
+     - Run targeted `--domain` searches (`style`, `color`, `typography`, `chart`, `icons`, `google-fonts`, `gsap`, `--rtl` if RTL) and check `references/quick-reference.md` + `references/pro-rules.md`.
+  2. **`ui-ux-pro-max` Sibling Design Skills** (apply as relevant to the spec):
+     - **`design-system`** (`C:/Users/Lenovo/.gemini/config/plugins/ui-ux-pro-max/skills/design-system/SKILL.md`): 3-layer token architecture (primitive → semantic → component).
+     - **`ui-styling`** (`C:/Users/Lenovo/.gemini/config/plugins/ui-ux-pro-max/skills/ui-styling/SKILL.md`): Tailwind + shadcn/ui component styling specs.
+     - **`brand`** (`C:/Users/Lenovo/.gemini/config/plugins/ui-ux-pro-max/skills/brand/SKILL.md`): Brand voice, visual identity, and messaging consistency.
+     - **`design`** (`C:/Users/Lenovo/.gemini/config/plugins/ui-ux-pro-max/skills/design/SKILL.md`): Creative direction, iconography, and brand assets.
+     - **`banner-design`** (`C:/Users/Lenovo/.gemini/config/plugins/ui-ux-pro-max/skills/banner-design/SKILL.md`): Hero/banner art direction (when hero/marketing banners are in scope).
+     - **`slides`** (`C:/Users/Lenovo/.gemini/config/plugins/ui-ux-pro-max/skills/slides/SKILL.md`): HTML presentation decks (when slides/presentations are in scope).
+  3. **`frontend-design`** (`C:/Users/Lenovo/.gemini/config/skills/frontend-design/SKILL.md`): Ground visual direction in the subject's vernacular, enforce deliberate typography/restraint, and eliminate generic AI templates.
+  4. **`impeccable`** (`C:/Users/Lenovo/.gemini/config/skills/impeccable/SKILL.md`): Pick the surface mode (`Persuade`, `Operate`, `Read`, or `Experience`), apply `typeset`/`colorize`/`layout`/`animate`/`delight`/`polish`/`bolder`/`quieter`/`distill` playbooks, and enforce `reference/craft-floor.md` when editing UI/CSS files.
+  5. **GSAP Animation Skills** (`C:/Users/Lenovo/.gemini/config/plugins/gsap-skills/skills/`): Consult `gsap-core`, `gsap-timeline`, `gsap-scrolltrigger`, `gsap-plugins`, `gsap-utils`, `gsap-react` (or `gsap-frameworks`), and `gsap-performance` whenever specifying motion, scroll reveals, timelines, or transitions (always include `prefers-reduced-motion`).
+  6. **Lenis Smooth Scroll** (`C:/Users/Lenovo/.gemini/config/skills/lenis/SKILL.md`): When smooth scrolling fits the surface (e.g., `Persuade` or `Experience` web apps), specify Lenis + GSAP ScrollTrigger single-RAF ticker sync, `lenis/snap` (if snapping), `data-lenis-prevent` on modals/nested scrollers, and `respectReducedMotion: true`.
+  7. **React Bits** (`C:/Users/Lenovo/.gemini/config/skills/react-bits/SKILL.md` + `references/catalog.md`): When the stack is React, select exact components (`TextAnimations`, `Animations`, `Components`, `Micro`, `Backgrounds`) matched to the project's `JS|TS` × `CSS|TW` flavor instead of inventing brittle custom shaders, and enforce WebGL/contrast guardrails.
+- **Profile B (CLI / TUI / Developer Tool)**: Apply `impeccable` (`craft-floor.md` hierarchy/contrast restraint) and `ponytail` (`C:/Users/Lenovo/.gemini/config/plugins/ponytail/skills/ponytail/SKILL.md`) for clean, accessible terminal layouts (`NO_COLOR` compliant).
+- **Profile C (Pure Backend / API / Worker / Library)**: Do **not** load Profile A UI skills—mark `.firm/03-ui-design.md` `N/A (Headless Backend Profile)`.
+
+---
+
 ## Surface Adaptation Instructions
 
 - **Profile A (Full-Stack / Web / Mobile / Desktop UI App)**: Deliver the full visual design system: aesthetic direction, font pairings, modular type scale, semantic color palette with contrast ratios, 4px/8px spacing scale, responsive layout grid, and component-level specs across Ideal, Loading, Empty, and Error states.
@@ -54,6 +79,8 @@ Write the complete blueprint to `.firm/03-ui-design.md` using this exact structu
   - [Aesthetic direction, typography/color token system, and layout density locked in this blueprint (or `N/A (Headless Backend Profile)`)]
 - **How Framework Adapted to Project Spec**:
   - [How Law 3 anti-slop rules and the locked Surface Profile (Profile A, B, or C) shaped the visual specifications]
+- **Skills Applied**:
+  - [Exact skills loaded/executed (e.g., `ui-ux-pro-max --design-system`, `design-system`, `ui-styling`, `frontend-design`, `impeccable`, `gsap-*`, `lenis`, `react-bits`) and the concrete palette/type/motion/component choices produced]
 - **Open Flags / Questions for User Quality Check**:
   - [Any visual/branding preferences requiring user confirmation at Gate 2, or `None`]
 

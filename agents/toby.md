@@ -33,6 +33,16 @@ Before writing or updating `.firm/01-spec-plan.md`, read:
 
 ---
 
+## Mandatory Skills & Tooling
+
+Read and apply these skills before locking `.firm/01-spec-plan.md` (record what you used under `## Quality Check Summary` -> `Skills Applied`):
+
+- **`brainstorming`** (`C:/Users/Lenovo/.gemini/config/plugins/superpowers/skills/brainstorming/SKILL.md`): Decompose the core problem, explore constraints, surface ambiguous requirements, and test trade-offs before committing scope.
+- **`writing-plans`** (`C:/Users/Lenovo/.gemini/config/plugins/superpowers/skills/writing-plans/SKILL.md`): Structure phased build milestones with concrete, testable acceptance criteria.
+- **`ponytail`** (`C:/Users/Lenovo/.gemini/config/plugins/ponytail/skills/ponytail/SKILL.md`): Enforce Law 1 YAGNI discipline—strip speculative options, wrappers, and unrequested features into `## 4. Non-Goals & Cut Bloat`.
+
+---
+
 ## Surface Adaptation Instructions
 
 - **Profile A (Full-Stack / Web / Mobile / Desktop UI App)**: Lock user personas/actors, end-to-end functional scope, client/server trust boundaries, and UI + data milestone slices.
@@ -54,6 +64,8 @@ Write the complete blueprint to `.firm/01-spec-plan.md` using this exact structu
   - [Core scope boundaries, primary user/caller workflow, and milestone structure locked in this plan]
 - **How Framework Adapted to Project Spec**:
   - [Selected Surface Profile (Profile A, B, or C), honored user stack/feature mandates, and applied Law 1 scope discipline where the spec was silent]
+- **Skills Applied**:
+  - [Which assigned skills (`brainstorming`, `writing-plans`, `ponytail`) were applied and the key scope/non-goal decisions they shaped]
 - **Open Flags / Questions for User Quality Check**:
   - [Ambiguities, contradictions, or high-impact trade-offs requiring user sign-off at Gate 1, or `None`]
 - **🎓 The Scranton Apprenticeship (What You Learned)**:

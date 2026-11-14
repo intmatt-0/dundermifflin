@@ -52,22 +52,36 @@ All firm artifacts live inside the target project's `.firm/` directory:
 
 To maintain maximum output quality while preventing rate lockouts and preserving high-reasoning quotas:
 
-### 1. Tiered Model Routing Matrix
-- **Tier 1 (High Reasoning)**: Restricted strictly to root orchestration, task planning, and error arbitration (**Michael** / **Toby**). Prohibited from writing implementation files directly.
-- **Tier 2 / 3 (Standard / Fast / Flash)**: Enforced for procedural code generation, CSS styling, tests, and file manipulation (**Jim**, **Andy**, **Dwight**, **Darryl**).
-- When calling `invoke_subagent`:
-  - `toby`: `Model: "inherit"` (or `"pro"` for complex specs)
+### 1. Tiered Model Routing Matrix (`swarm` Option B — Selectable Lineup 1 vs. Lineup 2)
+- **Full Firm Runs (`/dundermifflin` via `swarm`)**: Before spawning any worker in Step 0, Michael calls `swarm(action="models")` to read live quotas, presents the user's current usage status, and lets the user choose **Lineup 1** or **Lineup 2** (unless already specified in the prompt):
+
+| Worker (`swarm` name) | Tier & Job | Lineup 1: Quota-Smart (Gemini 4 / 3.8) | Lineup 2: Max Quality (Claude + Gemini Fallback) |
+| :--- | :--- | :--- | :--- |
+| **Michael** (`coordinator`) | Root orchestration, gate checks, board updates | User's active chat model (or `gemini-pro-orchestrator-g1-pro`) | Same (`gemini-3.8-flash-high` if rate-limited) |
+| **`toby`** | Spec & scope audit (`.firm/01`) | `gemini-4-hydrogen-xhigh` (`Gemini 4 Hydrogen (XHigh)`) | `claude-opus-5-5-high` (`Claude Opus 5.5 (High)`) |
+| **`jim`** | UX flows & 4-state matrix (`.firm/02`) | `gemini-3.8-flash-high` (`Gemini 3.8 Flash (High)`) | `gemini-4-hydrogen-medium` (`Gemini 4 Hydrogen (Medium)`) |
+| **`andy`** | UI design tokens & motion spec (`.firm/03`) | `gemini-4-argon-high` (`Gemini 4 Argon (High)`) | `claude-sonnet-5-5-high` (`Claude Sonnet 5.5 (High)`) |
+| **`dwight`** | System architecture & contracts (`.firm/04`) | `gemini-4-hydrogen-xhigh` (`Gemini 4 Hydrogen (XHigh)`) | `claude-opus-5-5-high` (`Claude Opus 5.5 (High)`) |
+| **`darryl`** | Production code, UI/motion wiring & tests (`.firm/05`) | `gemini-4-hydrogen-high` (or `gemini-4-argon-high`) | `claude-sonnet-5-5-high` (`Claude Sonnet 5.5 (High)`) |
+
+- **User Selection Rule**:
+  - **Lineup 1 (Quota-Smart)**: Spawns all workers directly on the Gemini 4 / 3.8 column (recommended by Guardrail 5 when Claude quota `< 30%`).
+  - **Lineup 2 (Max Quality)**: Spawns on the Claude Opus/Sonnet column right away (even if `< 30%` if the user explicitly picks it to spend remaining Claude quota), and auto-switches via `swarm(action="model")` to Lineup 1 if any worker exhausts quota or stalls mid-run.
+  - **Auto (Guardrail 5)**: Uses Lineup 2 when primary quotas are `>= 30%`, and automatically uses Lineup 1 when `< 30%`.
+
+- **Direct Single-Role Runs (`/toby`, `/jim`, `/andy`, `/dwight`, `/darryl` via `invoke_subagent`)**:
+  - `toby`: `Model: "inherit"` (or `"pro"` for complex specs; `"flash"` if Guardrail 5 active)
   - `jim`: `Model: "flash"`
-  - `andy`: `Model: "flash"`
-  - `dwight`: `Model: "inherit"` (or `"pro"` for core architecture)
+  - `andy`: `Model: "flash"` (or `"inherit"` for complex custom design systems when quota >= 30%)
+  - `dwight`: `Model: "inherit"` (or `"pro"` for core architecture; `"flash"` if Guardrail 5 active)
   - `darryl`: `Model: "flash"` (switches to `"inherit"` only when arbitrating complex multi-file test failures)
 
 ### 2. Operational Guardrails
 - **Guardrail 1: Zero-Drafting for the Orchestrator**: Michael Scott NEVER outputs raw code blocks intended to be saved as project files. Michael outputs only atomic sub-tasks, desk assignments, and gate verification summaries.
-- **Guardrail 2: Single-File Scope per Task Execution**: Worker agents modify or generate exactly one target file per prompt cycle unless explicitly approved by the human supervisor.
+- **Guardrail 2: Single-File Scope per Task Execution**: Worker agents modify or generate one target file per turn unless batch milestone execution is approved (user approval of **Quality Check 2** authorizes `darryl` to implement the locked `.firm/04-architecture.md` milestones cleanly across their documented files).
 - **Guardrail 3: 2-Turn Anti-Loop Circuit Breaker**: Subagents are permitted a maximum of two (2) self-correction retry cycles upon encountering an error (such as a failed test or syntax error). If unresolved after 2 attempts, the agent must immediately stop, summarize the error and stack trace, and escalate to Michael or the Human Supervisor.
 - **Guardrail 4: Local File Referencing (No Memory Dumps)**: Never dump full file trees or multi-megabyte dependencies into prompt memory. Use exact local file referencing (e.g. `@src/models.ts` or line ranges).
-- **Guardrail 5: Dynamic Quota Fallback (Economy Mode)**: If high-reasoning weekly quotas drop below 30% or a 5-hour rate limit approaches, immediately switch active orchestration and worker models to fast reasoning (`flash`) to avoid session lockouts.
+- **Guardrail 5: Dynamic Quota Fallback (Economy Mode)**: Before spawning a worker, inspect `swarm(action="models")`. If a primary model's remaining quota is below **30%** (or a rate limit hits mid-run), switch immediately to the **Guardrail 5 Fallback** model (via `add{model}` on spawn, or `swarm(action="model", name="<role>", model="<fallback>")` mid-run—never `kill` and re-`add` a waiting worker) and report the fallback in the Quality-Check Brief—unless the user explicitly requests spending the remaining `< 30%` primary quota.
 
 ---
 
@@ -94,11 +108,11 @@ To ensure the developer builds real architectural understanding rather than bein
 - Template path: `C:/Users/Lenovo/.gemini/config/plugins/dundermifflin/templates/dundermifflin-board.html`
 - Active artifact path: `<artifact-dir>/dundermifflin-board.html` (`UserFacing: true`)
 - At every Quality Check Gate (or after a direct `/toby`, `/jim`, `/andy`, `/dwight`, `/darryl` run), update `window.DUNDER_MIFFLIN_STATE` in `<artifact-dir>/dundermifflin-board.html` and embed it inline via `<agent-embed src="file:///<artifact-dir>/dundermifflin-board.html"></agent-embed>`.
-- Always pass the character's full display title in `invoke_subagent`'s `Role` parameter (e.g., `"Toby Flenderson — Spec Planner (.firm/01)"`, `"Jim Halpert — UX Designer (.firm/02)"`, `"Andy Bernard — UI Designer (.firm/03)"`, `"Dwight Schrute — Software Architect (.firm/04)"`, `"Darryl Philbin — Software Engineer (.firm/05)"`) so the Antigravity **Subagents** sidebar displays each character cleanly.
+- For full `/dundermifflin` runs (`swarm`), use lowercase roster names (`toby`, `jim`, `andy`, `dwight`, `darryl`) on the Swarm board and link the board when created. For direct `/toby`, `/jim`, `/andy`, `/dwight`, `/darryl` runs (`invoke_subagent`), pass the character's full display title in `Role` (e.g., `"Toby Flenderson — Spec Planner (.firm/01)"`) so the Antigravity **Subagents** sidebar displays each character cleanly.
 
 ### Mandatory Quality Check Summary Header
 
-Every `.firm/0X-*.md` file MUST begin with a `## Quality Check Summary` section containing three bullet lists:
+Every `.firm/0X-*.md` file MUST begin with a `## Quality Check Summary` section containing these four core bullet lists (plus the **Scranton Apprenticeship** block where included in the agent's template):
 
 ```markdown
 ## Quality Check Summary
@@ -107,6 +121,24 @@ Every `.firm/0X-*.md` file MUST begin with a `## Quality Check Summary` section 
   - [Concise bullet list of the core product, UX, UI, architectural, or engineering decisions locked in this blueprint]
 - **How Framework Adapted to Project Spec**:
   - [How `FRAMEWORK.md` rules and the detected Surface Profile (Profile A, B, or C) adapted to the user's Project Spec `.md`]
+- **Skills Applied**:
+  - [Exact skills loaded/executed for this stage (e.g., `ui-ux-pro-max --design-system`, `impeccable`, `ponytail`, `verification-before-completion`) and the concrete decision/output each produced]
 - **Open Flags / Questions for User Quality Check**:
   - [Any ambiguities, trade-offs, or assumptions requiring user confirmation at this gate, or `None`]
 ```
+
+---
+
+## 8. Role-Based Skill Activation Matrix
+
+Every branch specialist MUST load and apply the skills assigned to their role before producing `.firm/0X-*.md` or writing code. Follow **progressive disclosure**: load only skills matching the locked **Surface Profile** (`Profile A`, `Profile B`, or `Profile C`) and detected tech stack so tokens are never wasted on irrelevant guides.
+
+| Character / Role | Core Skills (Always Load) | Profile A / Frontend & Design Skills | Stack / Conditional Skills |
+| :--- | :--- | :--- | :--- |
+| **`toby`** (Spec Planner) | `brainstorming`, `writing-plans`, `ponytail` | — | — |
+| **`jim`** (UX Designer) | `brainstorming`, `ponytail` | `impeccable` (UX flows, `shape`/`onboard`/`clarify`/`critique`/`harden`/`adapt`), `ui-ux-pro-max` (`--domain ux`, `--domain web`) | — |
+| **`andy`** (UI Designer) | `ponytail` (Profile B/C restraint) | **All installed UI/Design/Motion skills:** `ui-ux-pro-max` (`--design-system`, `--domain style\|color\|typography\|chart\|icons\|google-fonts\|gsap`), `design-system`, `ui-styling`, `brand`, `design`, `banner-design`, `slides`, `frontend-design`, `impeccable` (modes + `craft-floor.md`), `gsap-*` (8 skills), `lenis`, `react-bits` (when React) | Match component/CSS flavor (`JS\|TS` × `CSS\|TW`) to `.firm/01` |
+| **`dwight`** (Architect) | `ponytail`, `ponytail-audit`, `writing-plans`, `context7-mcp` | — | `react-best-practices` (React/Next.js); `vercel-plugin` (`create-a-backend`, `vercel-storage`, `auth`, `ai-sdk`, `workflow`, `queues`, `flags-sdk`, `vercel-functions`, `deployments-cicd`) when on Vercel/Next.js |
+| **`darryl`** (Engineer) | `test-driven-development`, `systematic-debugging`, `verification-before-completion`, `ponytail`, `ponytail-review`, `context7-mcp` | `ui-ux-pro-max` (`--stack`), `ui-styling`, `impeccable` (`craft-floor.md`, `polish`, `harden`, `audit`), `gsap-*`, `lenis`, `react-bits` (only when specified in `.firm/03`) | `react-best-practices` (React/Next.js); matching `vercel-plugin` skills + `verification` when applicable |
+
+> **Skill Path Resolution**: Exact `SKILL.md` paths and CLI commands for each character live in `agents/<role>.md` under `## Mandatory Skills & Tooling`. If a blueprint or build log omits `Skills Applied`, Michael rejects it before presenting the Quality Check Gate.
